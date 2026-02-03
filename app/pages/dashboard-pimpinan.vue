@@ -3,10 +3,17 @@
         <PageHeader title="Dashboard Pimpinan 🎯" subtitle="Monitoring menyeluruh situasi jamaah dan operasional">
             Dropdown
         </PageHeader>
+
+        <DashboardPimpinan />
+
+        <Tabs />
     </div>
 </template>
 
 <script setup lang="ts">
+import Tabs from '~/components/DashboardPimpinan/Tabs.vue';
+import DashboardPimpinan from '~/components/DashboardPimpinan/DashboardPimpinan.vue';
+
 
 </script>
 

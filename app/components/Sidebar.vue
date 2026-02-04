@@ -9,7 +9,7 @@
   <!-- Sidebar -->
   <aside
     class="fixed lg:static inset-y-0 left-0 z-50
-           w-[280px] bg-white border-r flex flex-col
+           w-[280px] bg-white flex flex-col
            px-5 py-6
            transform transition-transform duration-300
            lg:translate-x-0"

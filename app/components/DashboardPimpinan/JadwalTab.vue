@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div v-for="card in cards" :key="card.title" class="rounded-xl border bg-white shadow">
+            <div v-for="card in cards" :key="card.title" class="rounded-xl bg-white shadow">
                 <div class="p-4">
                     <div class="flex items-center gap-3">
                         <div :class="card.iconBg + ' p-2 rounded-lg'">
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="rounded-xl bg-white border shadow mt-4">
+        <div class="rounded-xl bg-white shadow mt-4">
             <div class="flex flex-col space-y-1.5 p-6">
                 <div class="font-semibold tracking-tight text-lg">
                     Jadwal Hari Ini

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div v-for="data in datas" :key="data.title" class="rounded-xl border bg-white shadow">
+            <div v-for="data in datas" :key="data.title" class="rounded-xl bg-white shadow">
                 <div class="p-4 text-center">
                     <component :is="data.icon" :class="data.iconColor + ' w-8 h-8 mx-auto mb-2'" />
                     <p class="text-3xl font-bold" :class="data.countColor">{{ data.count }}</p>
@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="rounded-xl border bg-white shadow mt-5">
+        <div class="rounded-xl bg-white shadow mt-5">
             <div class="flex flex-col space-y-1.5 p-6">
                 <div class="font-semibold leading-none tracking-tight">
                     Kelengkapan Dokumen Per Kloter

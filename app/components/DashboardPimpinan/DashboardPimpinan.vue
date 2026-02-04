@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-5">
         <div v-for="card in cards" :key="card.title">
-            <div class="rounded-xl border shadow bg-gradient-to-br" :class="card.bgColor">
+            <div class="rounded-xl shadow bg-gradient-to-br" :class="card.bgColor">
                 <div class="p-4">
                     <component :is="card.icon" class="text-white"/>
                     <p class="text-3xl text-white font-bold mt-3">{{ card.count }}</p>

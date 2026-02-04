@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div v-for="card in cards" :key="card.title">
-            <div class="rounded-xl border shadow opacity-50 bg-white">
+            <div class="rounded-xl shadow opacity-50 bg-white">
                 <div class="flex flex-col space-y-1.5 p-6 pb-3">
                     <div class="flex items-center justify-between">
                         <div class="font-semibold tracking-tight text-base flex items-center gap-2">

@@ -17,9 +17,9 @@ const tabs = [
 
 <template>
     <div>
-        <div class="inline-flex gap-1 rounded-xl bg-white p-1 shadow-sm border mt-5">
+        <div class="inline-flex gap-1 rounded-xl bg-white p-1 shadow-sm mt-5">
             <button v-for="tab in tabs" :key="tab.key" @click="activeTab = tab.key"
-                class="rounded-lg px-4 py-2 text-sm font-medium transition" :class="activeTab === tab.key
+                class="rounded-lg px-4 py-2 text-sm font-medium transition cursor-pointer" :class="activeTab === tab.key
                         ? 'bg-gray-100 text-gray-900 shadow-sm'
                         : 'text-gray-500 hover:bg-gray-50'
                     ">

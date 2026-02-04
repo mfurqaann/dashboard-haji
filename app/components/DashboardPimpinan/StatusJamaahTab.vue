@@ -2,7 +2,7 @@
     <div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div v-for="card in cards" :key="card.title">
-                <div class="rounded-xl border bg-white shadow border-l-4" :class="card.borderColor">
+                <div class="rounded-xl bg-white shadow border-l-4" :class="card.borderColor">
                     <div class="p-4">
                         <p class="text-2xl font-bold">{{ card.value }}</p>
                         <p class="text-sm text-slate-600">{{ card.title }}</p>
@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <div class="rounded-xl border bg-white shadow mt-5">
+        <div class="rounded-xl bg-white shadow mt-5">
             <div class="flex flex-col space-y-1.5 p-6">
                 <div class="font-semibold leading-none tracking-tight">
                     Distribusi Jamaah

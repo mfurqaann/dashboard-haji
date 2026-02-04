@@ -10,7 +10,7 @@
                         <span v-if="card.info">{{ card.info }}</span>
                     </div>
                 </div>
-                <div class="p-3 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg">
+                <div class="p-3 rounded-xl bg-linear-to-br from-emerald-500 to-emerald-600 shadow-lg">
                     <component :is="card.icon" class="text-white" />
                 </div>
             </div>

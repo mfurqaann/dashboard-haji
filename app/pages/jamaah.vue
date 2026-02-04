@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4 md:p-8">
+    <div class="min-h-screen p-4 md:p-8">
         <PageHeader title="Data Jamaah 🎯" subtitle="Kelola seluruh data jamaah haji">
             <button class="flex items-center gap-2 px-4 py-2 text-sm rounded-xl
            bg-emerald-600 text-white font-semibold
@@ -20,7 +20,8 @@
                 </div>
 
                 <div class="flex gap-3">
-                    <button>Semua Status</button>
+                    <USelectMenu v-model="value" :items="items" class="cursor-pointer w-48" />
+
                     <div class="flex border border-slate-200 rounded-lg overflow-hidden">
                         <button class="p-2" :class="display === 'grid' ? 'bg-slate-100' : 'hover:bg-slate-50'" @click="display = 'grid'">
                             <Grid3x3 class="w-4 h-4" />
@@ -79,6 +80,9 @@ const dataJamaah = [
         phone: '082345678912',
     },
 ].map(mapJamaahUI)
+
+const items = ref(['Semua Status', 'Terdaftar', 'Dokumen Lengkap', 'Siap Berangkat', 'Dalam Perjalanan', 'Di Makkah', 'Di Madinah']);
+const value = ref('Semua Status')
 
 const dataJamaahlength = dataJamaah.length;
 

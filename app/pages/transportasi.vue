@@ -9,12 +9,20 @@
                 <span>Tambah Kendaraan</span>
             </button>
         </PageHeader>
+        <div class="max-w-md my-6">
+            <SearchInput v-model="searchQuery" placeholder="Cari kendaraan, plat, atau driver" />
+        </div>
+
+        <TransportasiCard />
+
     </div>
 </template>
 
 <script setup lang="ts">
 import { Plus } from 'lucide-vue-next';
+import TransportasiCard from '~/components/Transportasi/TransportasiCard.vue';
 
+const searchQuery = ref('');
 
 </script>
 

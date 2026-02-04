@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4 md:p-8">
+    <div class="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 p-4 md:p-8">
         <PageHeader title="Manajemen Aset" subtitle="Kelola inventaris dan perlengkapan">
             <button class="flex items-center gap-2 px-4 py-2 text-sm rounded-xl
            bg-emerald-600 text-white font-semibold
@@ -9,12 +9,25 @@
                 <span>Tambah Aset</span>
             </button>
         </PageHeader>
+
+        <div class="flex flex-col md:flex-row gap-4 mt-5">
+            <div class="flex-1 max-w-md">
+                <SearchInput v-model="searchQuery" placeholder="Cari aset atau kode..." />
+            </div>
+            <USelectMenu v-model="value" :items="items" class="cursor-pointer w-48" />
+        </div>
+
+        <AsetCard class="mt-6" />
     </div>
 </template>
 
 <script setup lang="ts">
 import { Plus } from 'lucide-vue-next';
+import AsetCard from '~/components/Aset/AsetCard.vue';
 
+const searchQuery = ref('');
+const items = ref(['Semua Kategori', 'Perlengkapan Ibadah', 'Perlengkapan Kesehatan', 'Dokumen', 'Kendaraan', 'Elektronik']);
+const value = ref('Semua Kategori')
 
 </script>
 

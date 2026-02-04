@@ -21,7 +21,7 @@ const emit = defineEmits<{
       :placeholder="props.placeholder"        
       :value="props.modelValue"               
         @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-      class="h-9 w-full rounded-md border px-3 pl-10 focus:outline-none focus:ring-1"
+      class="h-9 w-full rounded-md border border-slate-300 px-3 pl-10 focus:outline-none focus:ring-1"
     />
   </div>
 </template>

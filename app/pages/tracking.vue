@@ -9,11 +9,14 @@
                 <span>Refresh</span>
             </button>
         </PageHeader>
+
+        <TrackingCard class="mt-5" />
     </div>
 </template>
 
 <script setup lang="ts">
 import { RefreshCcw } from 'lucide-vue-next';
+import TrackingCard from '~/components/Tracking/TrackingCard.vue';
 
 
 </script>

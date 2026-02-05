@@ -1,5 +1,5 @@
 <script setup>
-import { Calendar, CircleCheck, CircleX, FileCheck, TriangleAlert, Users, UtensilsCrossed } from 'lucide-vue-next';
+import { Calendar, FileCheck, Users, UtensilsCrossed } from 'lucide-vue-next';
 import DokumenTab from './DokumenTab.vue';
 import MakanTab from './MakanTab.vue';
 import JadwalTab from './JadwalTab.vue';

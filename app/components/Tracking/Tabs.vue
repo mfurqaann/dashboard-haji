@@ -1,5 +1,7 @@
 <script setup>
 import BaseCard from '../BaseCard.vue';
+import { ref } from 'vue'
+
 
 const activeTab = ref(0)
 
@@ -12,7 +14,9 @@ const items = ref([
         label: 'Password',
         icon: 'i-lucide-users',
     }
-])
+]);
+
+const zoom = ref(6)
 
 
 </script>
@@ -25,7 +29,7 @@ const items = ref([
 
         <div class="mt-6">
             <BaseCard>
-                <div class="flex flex-col space-y-1.5 p-4 border-b">
+                <div class="flex flex-col space-y-1.5 py-4">
                     <div class="flex items-center justify-between">
                         <div class="font-semibold tracking-tight text-lg">
                             Lokasi Real-time
@@ -46,9 +50,13 @@ const items = ref([
                 </div>
 
                 <div class="p-0">
-                    <div class="h-[500px]">
+                    <div class="h-125">
                         <div class="h-full w-full rounded-xl overflow-hidden border border-slate-200">
-                            Leaflet
+                            <LMap ref="map" :zoom="zoom" :center="[47.21322, -1.559482]" :use-global-leaflet="false">
+                                <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                    attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+                                    layer-type="base" name="OpenStreetMap" />
+                            </LMap>
                         </div>
                     </div>
                 </div>

@@ -1,24 +1,26 @@
 <template>
     <div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <BaseCard v-for="item in stats" :key="item.key" :bg="item.bg">
-            <div class="flex items-center gap-3">
-                <div :class="['p-2 rounded-lg', item.iconBg]">
-                    <component :is="item.icon" class="w-5 h-5" :class="item.iconColor" />
-                </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <BaseCard v-for="item in stats" :key="item.key" :bg="item.bg">
+                <div class="flex items-center gap-3">
+                    <div :class="['p-2 rounded-lg', item.iconBg]">
+                        <component :is="item.icon" class="w-5 h-5" :class="item.iconColor" />
+                    </div>
 
-                <div>
-                    <p class="text-2xl font-bold" :class="item.valueColor">
-                        {{ item.total }}
-                    </p>
-                    <p class="text-sm" :class="item.labelColor">
-                        {{ item.label }}
-                    </p>
+                    <div>
+                        <p class="text-2xl font-bold" :class="item.valueColor">
+                            {{ item.total }}
+                        </p>
+                        <p class="text-sm" :class="item.labelColor">
+                            {{ item.label }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </BaseCard>
-    </div>
-    <Tabs />
+            </BaseCard>
+        </div>
+        <Tabs />
+
+        <DaftarJamaah />
     </div>
 </template>
 
@@ -26,6 +28,7 @@
 import { Bus, MapPin, Users } from 'lucide-vue-next';
 import BaseCard from '../BaseCard.vue';
 import Tabs from './Tabs.vue';
+import DaftarJamaah from './DaftarJamaah.vue';
 
 const statsFromApi = [
     {

@@ -1,22 +1,28 @@
 <script setup>
 import BaseCard from '../BaseCard.vue';
 import { ref } from 'vue'
+import SearchInput from '../SearchInput.vue';
 
 
 const activeTab = ref(0)
 
 const items = ref([
     {
-        label: 'Account',
+        label: 'Peta',
         icon: 'i-lucide-map-pin',
     },
     {
-        label: 'Password',
+        label: 'Jamaah',
         icon: 'i-lucide-users',
     }
 ]);
 
-const zoom = ref(6)
+
+const searchQuery = ref('');
+const dataDropdownStatus = ref(['Semua Status', 'Dalam Perjalanan', 'Di Mekah', 'Di Madinah']);
+const valueDropdownStatus = ref('Semua Status');
+
+const zoom = ref(6);
 
 
 </script>
@@ -28,7 +34,7 @@ const zoom = ref(6)
         </div>
 
         <div class="mt-6">
-            <BaseCard>
+            <BaseCard v-if="activeTab == 0">
                 <div class="flex flex-col space-y-1.5 py-4">
                     <div class="flex items-center justify-between">
                         <div class="font-semibold tracking-tight text-lg">
@@ -64,7 +70,16 @@ const zoom = ref(6)
 
 
             <div v-if="activeTab == 1">
-                konten Makan
+                <div class="rounded-xl border border-slate-100 p-4 mt-5">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1 max-w-md">
+                            <SearchInput v-model="searchQuery"
+                                placeholder="Cari jamaah berdasarkan nama, NIK, atau kota..." />
+                        </div>
+                        <USelectMenu v-model="valueDropdownStatus" :items="dataDropdownStatus"
+                            class="cursor-pointer w-48" />
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -4,5 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxtjs/leaflet'],
   css: ['~/assets/css/main.css'],
-
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in'},
+  }
 })

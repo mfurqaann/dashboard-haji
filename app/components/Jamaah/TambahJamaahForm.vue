@@ -130,8 +130,6 @@ const df = new DateFormatter('en-US', {
     dateStyle: 'medium'
 })
 
-const modelValue = shallowRef(new CalendarDate(2022, 1, 10))
-
 </script>
 
 <style scoped></style>

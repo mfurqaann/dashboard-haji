@@ -51,16 +51,16 @@
                     <UInput v-model="form.provinsi" class="w-full" />
                 </UFormField>
                 <UFormField label="Golongan Darah" name="golonganDarah">
-                    <UInput v-model="form.golonganDarah" class="w-full" />
+                    <USelectMenu v-model="form.golonganDarah" :items="dataGolonganDarah" placeholder="Pilih" class="w-full" />
                 </UFormField>
                 <UFormField label="Status" name="status">
-                    <UInput v-model="form.status" class="w-full" />
+                    <USelectMenu v-model="form.status" :items="statuses" placeholder="Pilih" class="w-full" />
                 </UFormField>
                 <UFormField label="Kloter" name="kloter">
-                    <UInput v-model="form.kloter" class="w-full" />
+                    <USelectMenu v-model="form.kloter" :items="dataKloter" placeholder="Pilih Kloter" class="w-full" />
                 </UFormField>
                 <UFormField label="Rombongan" name="rombongan">
-                    <UInput v-model="form.rombongan" class="w-full" />
+                    <USelectMenu v-model="form.rombongan" :items="dataRombongan" placeholder="Pilih Rombongan" class="w-full" />
                 </UFormField>
                 <UFormField label="Riwayat Penyakit" name="riwayatpenyakit" class="col-span-2">
                     <UTextarea v-model="form.riwayatPenyakit" :maxrows="4" autoresize class="w-full" />
@@ -97,7 +97,7 @@ const form: any = reactive({
     kota: '',
     provinsi: '',
     golonganDarah: '',
-    status: 'terdaftar',
+    status: 'Terdaftar',
     kloter: '',
     rombongan: '',
     riwayatPenyakit: '',
@@ -119,7 +119,11 @@ const items = ref<SelectMenuItem[]>([
     },
 
 ])
-const value = ref('Pilih')
+
+const dataGolonganDarah = ref(['A', 'B', 'AB', 'O']);
+const dataRombongan = ref(['Rombongan 1', 'Rombongan 2']);
+const dataKloter = ref(['Kloter 1', 'Kloter 2'])
+const statuses = ref(['Dokumen Lengkap', 'Siap Berangkat', 'Di Mekah', 'Di Madinah', 'Pulang', 'Selesai'])
 
 
 async function onSubmit(event: FormSubmitEvent<any>) {

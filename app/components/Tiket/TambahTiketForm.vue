@@ -9,10 +9,10 @@
                     <USelectMenu v-model="form.kloter" :items="dataKloter" placeholder="Pilih Kloter" class="w-full" />
                 </UFormField>
                 <UFormField label="Kode Booking" name="kodeBooking">
-                    <UInput v-model="form.kodeBooking" placeholder="Garuda Indonesia" class="w-full" />
+                    <UInput v-model="form.kodeBooking" class="w-full" />
                 </UFormField>
                 <UFormField label="Nomor Tiket" name="nomorTiket">
-                    <UInput v-model="form.nomorTiket" placeholder="Garuda Indonesia" class="w-full" />
+                    <UInput v-model="form.nomorTiket" class="w-full" />
                 </UFormField>   
                 <UFormField label="Jenis" name="jenis">
                     <USelectMenu v-model="form.jenis" :items="dataJenis" class="w-full" />

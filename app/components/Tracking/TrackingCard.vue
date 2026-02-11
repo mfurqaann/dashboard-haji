@@ -18,17 +18,12 @@
                 </div>
             </BaseCard>
         </div>
-        <Tabs />
-
-        <DaftarJamaah />
     </div>
 </template>
 
 <script setup lang="ts">
 import { Bus, MapPin, Users } from 'lucide-vue-next';
 import BaseCard from '../BaseCard.vue';
-import Tabs from './Tabs.vue';
-import DaftarJamaah from './DaftarJamaah.vue';
 
 const statsFromApi = [
     {

@@ -1,5 +1,6 @@
 <template>
     <div class="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 p-4 md:p-8">
+        
         <PageHeader title="Dokumen Jamaah" subtitle="Kelola dan validasi dokumen penting jamaah">
         </PageHeader>
 
@@ -14,22 +15,36 @@
                 <USelectMenu v-model="valueDropdownStatus" :items="dataDropdownStatus" class="cursor-pointer w-48" />
             </div>
         </div>
+        <USlideover v-model:open="isOpenForm" :title="`Upload Dokumen - ${namaJamaah}`">
 
-        <StatusDokumen class="mt-5" />
-
+            <template #body>
+                <UploadForm />
+            </template>
+        </USlideover>
+        
+        <StatusDokumen class="mt-5" @openForm="openUploadForm" />
     </div>
 </template>
 
 <script setup lang="ts">
 import DokumenCard from '~/components/Dokumen/DokumenCard.vue';
 import StatusDokumen from '~/components/Dokumen/StatusDokumen.vue';
+import UploadForm from '~/components/Dokumen/UploadForm.vue';
 
 const searchQuery = ref('');
+const isOpenForm = ref(false);
+const namaJamaah = ref('');
+
 const dataDropdownStatus = ref(['Semua Status', 'Dokumen Lengkap', 'Belum Lengkap']);
 const valueDropdownStatus = ref('Semua Status');
 
 const dataDropdownKloter = ref(['Semua Kloter', 'Kloter 1', 'Kloter 2', 'Kloter 3']);
 const valueDropdownKloter = ref('Semua Kloter');
+
+function openUploadForm (nama: string) {
+    isOpenForm.value = true
+    namaJamaah.value = nama
+}
 
 </script>
 

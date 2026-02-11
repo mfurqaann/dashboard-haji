@@ -65,7 +65,11 @@
 
                                     <td class="p-2 align-middle">
                                         <button
-                                            class="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">
+                                            class="inline-flex items-center gap-2 rounded-lg 
+                                            bg-emerald-600 px-3 py-2 text-sm font-semibold 
+                                            text-white hover:bg-emerald-700 cursor-pointer"
+                                            @click="$emit('openForm', item.nama)"
+                                            >
                                             <Plus class="w-4 h-4" />
                                             Upload
                                         </button>
@@ -84,6 +88,8 @@
 import { Plus } from 'lucide-vue-next';
 import BaseCard from '../BaseCard.vue';
 import StatusDot from './StatusDot.vue';
+
+defineEmits(['openForm'])
 
 const jamaah = ref([
     {
@@ -117,6 +123,11 @@ const jamaah = ref([
         vaksin: 'pending',
     },
 ])
+
+function handleClickJamaah(nama: string) {
+  console.log(nama)
+}
+
 
 
 </script>

@@ -11,13 +11,16 @@
         </PageHeader>
 
         <TrackingCard class="mt-5" />
+
+        <Tabs />
     </div>
 </template>
 
 <script setup lang="ts">
 import { RefreshCcw } from 'lucide-vue-next';
+import DaftarJamaah from '~/components/Tracking/DaftarJamaah.vue';
+import Tabs from '~/components/Tracking/Tabs.vue';
 import TrackingCard from '~/components/Tracking/TrackingCard.vue';
-
 
 </script>
 

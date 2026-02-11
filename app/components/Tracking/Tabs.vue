@@ -2,6 +2,7 @@
 import BaseCard from '../BaseCard.vue';
 import { ref } from 'vue'
 import SearchInput from '../SearchInput.vue';
+import DaftarJamaah from './DaftarJamaah.vue';
 
 
 const activeTab = ref(0)
@@ -70,7 +71,7 @@ const zoom = ref(6);
 
 
             <div v-if="activeTab == 1">
-                <div class="rounded-xl border border-slate-100 p-4 mt-5">
+                <div class="rounded-xl border border-slate-100 p-4">
                     <div class="flex flex-col md:flex-row gap-4">
                         <div class="flex-1 max-w-md">
                             <SearchInput v-model="searchQuery"
@@ -79,6 +80,8 @@ const zoom = ref(6);
                         <USelectMenu v-model="valueDropdownStatus" :items="dataDropdownStatus"
                             class="cursor-pointer w-48" />
                     </div>
+
+                    <DaftarJamaah class="mt-5" />
                 </div>
             </div>
 

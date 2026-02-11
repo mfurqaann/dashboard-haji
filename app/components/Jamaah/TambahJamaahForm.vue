@@ -1,15 +1,6 @@
 <template>
-    <div class="p-6 overflow-auto">
-        <div class="flex flex-col space-y-2 text-center sm:text-left">
-            <h2 class="text-lg font-semibold text-foreground">
-                Tambah Jamaah
-            </h2>
-            <p class="text-sm text-muted-foreground">
-                Perbarui data jamaah
-            </p>
-        </div>
-
-        <UForm :state="form" class="space-y-4 mt-6" @submit="onSubmit">
+    <div class="overflow-auto">
+        <UForm :state="form" class="space-y-4" @submit="onSubmit">
             <div class="grid grid-cols-2 gap-4">
                 <UFormField label="Nama Lengkap" name="namaLengkap" class="col-span-2">
                     <UInput v-model="form.nama" class="w-full" />

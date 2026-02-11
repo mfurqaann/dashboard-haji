@@ -14,7 +14,16 @@
                             <p class="text-amber-100 text-sm">{{ data.nomor }}</p>
                         </div>
                     </div>
-                    <div>titik tiga</div>
+                    <UDropdownMenu :items="items" :content="{
+                        align: 'start',
+                        side: 'bottom',
+                        sideOffset: 8
+                    }" :ui="{
+            content: 'w-48'
+        }">
+                        <UButton icon="i-lucide-ellipsis-vertical"
+                            class="text-white hover:text-black cursor-pointer hover:shadow" variant="ghost" />
+                    </UDropdownMenu>
                 </div>
             </div>
 
@@ -44,6 +53,7 @@
 </template>
 
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui';
 import { Phone, Plane, Route, User } from 'lucide-vue-next';
 
 const dataTransportasi = [
@@ -68,6 +78,16 @@ const dataTransportasi = [
         status: 'Tersedia',
     },
 ];
+
+const items = ref<DropdownMenuItem[]>([
+  {
+    label: 'Edit',
+  },
+  {
+    label: 'Hapus',
+    color: 'error'
+  }
+])
 
 </script>
 

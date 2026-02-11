@@ -1,10 +1,12 @@
 <template>
     <div class="min-h-screen p-4 md:p-8">
-        <USlideover v-model="isOpenForm">
+        <USlideover v-model:open="isOpenForm" title="Tambah Jamaah" description="Perbarui data jamaah">
 
-            <template #content>
+            <template #body>
                 <TambahJamaahForm />
             </template>
+        </USlideover>
+
 
             <PageHeader title="Data Jamaah 🎯" subtitle="Kelola seluruh data jamaah haji">
                 <button class="flex items-center gap-2 px-4 py-2 text-sm rounded-xl
@@ -48,9 +50,6 @@
             </div>
 
             <JamaahCard :display="display" :data-jamaah="dataJamaah" @select="onSelect" @menu="onMenu" />
-
-
-        </USlideover>
     </div>
 </template>
 

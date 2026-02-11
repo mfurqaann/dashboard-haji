@@ -14,13 +14,23 @@
                             <p class="text-blue-100 text-sm">Kloter: 123456</p>
                         </div>
                     </div>
-                    <div>titik tiga</div>
+                    <UDropdownMenu :items="items" :content="{
+                        align: 'start',
+                        side: 'bottom',
+                        sideOffset: 8
+                    }" :ui="{
+            content: 'w-48'
+        }">
+                        <UButton icon="i-lucide-ellipsis-vertical"
+                            class="text-white hover:text-black cursor-pointer hover:shadow" variant="ghost" />
+                    </UDropdownMenu>
                 </div>
             </div>
 
             <div class="p-4 space-y-3">
                 <div class="flex items-center justify-between">
-                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">Pending</span>
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">Pending</span>
                     <span class="text-xs px-2 py-1 rounded bg-emerald-50 text-emerald-700">
                         Berangkat
                     </span>
@@ -40,11 +50,19 @@
 </template>
 
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui';
 import { Plane, User } from 'lucide-vue-next';
 
+const items = ref<DropdownMenuItem[]>([
+    {
+        label: 'Edit',
+    },
+    {
+        label: 'Hapus',
+        color: 'error'
+    }
+])
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

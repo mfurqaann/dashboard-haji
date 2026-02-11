@@ -22,9 +22,7 @@
                     }" :ui="{
                         content: 'w-48'
                     }">
-                        <button>
-                            <EllipsisVertical class="w-4 h-4 cursor-pointer" />
-                        </button>
+                        <UButton icon="i-lucide-ellipsis-vertical" color="neutral" variant="ghost" />
                     </UDropdownMenu>
                 </div>
             </div>
@@ -105,7 +103,7 @@ const items = ref<DropdownMenuItem[]>([
     },
     {
         label: 'Hapus',
-        class: 'text-red-500 hover:text-red-600'
+        color: 'error'
     },
 ])
 

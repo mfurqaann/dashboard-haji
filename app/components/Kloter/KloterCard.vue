@@ -11,9 +11,15 @@
                             {{ data.airline }}
                         </p>
                     </div>
-                    <div>
-                        titik tiga
-                    </div>
+                    <UDropdownMenu :items="items" :content="{
+          align: 'start',
+          side: 'bottom',
+          sideOffset: 8
+        }" :ui="{
+      content: 'w-48'
+    }">
+          <UButton icon="i-lucide-ellipsis-vertical" color="neutral" variant="ghost" class="text-white hover:text-black cursor-pointer" />
+        </UDropdownMenu>
                 </div>
             </div>
             <div class="p-5 space-y-4">
@@ -68,6 +74,7 @@
 </template>
 
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui';
 import { Building2, Calendar, Plane, Users } from 'lucide-vue-next';
 
 const dataKloter = [
@@ -116,8 +123,17 @@ const dataKloter = [
         capacity: { total: 442, booked: 0 },
         hotelMekah: 'Hotel Mekah 1',
     },
-    
-]
+];
+
+const items = ref<DropdownMenuItem[]>([
+  {
+    label: 'Edit',
+  },
+  {
+    label: 'Hapus',
+    color: 'error'
+  }
+])
 
 </script>
 

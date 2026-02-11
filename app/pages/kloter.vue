@@ -1,10 +1,13 @@
 <template>
     <div class="min-h-screen p-4 md:p-8">
-        <USlideover v-model="isOpenForm">
+        <USlideover v-model:open="isOpenForm" title="Tambah Kloter Baru" description="Isi data kloter baru">
 
-            <template #content>
+            <template #body>
                 <TambahKloterForm />
             </template>
+        
+
+        </USlideover>
 
             <PageHeader title="Manajemen Kloter" subtitle="Kelola kloter keberangkatan jamaah">
                 <button class="flex items-center gap-2 px-4 py-2 text-sm rounded-xl
@@ -20,8 +23,6 @@
             </div>
 
             <KloterCard />
-
-        </USlideover>
     </div>
 </template>
 

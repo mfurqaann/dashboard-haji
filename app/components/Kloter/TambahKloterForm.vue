@@ -1,14 +1,6 @@
 <template>
-    <div class="p-6 overflow-auto max-w-2xl">
-        <div class="flex flex-col space-y-2 text-center sm:text-left">
-            <h2 class="text-lg font-semibold text-foreground">
-                Tambah Kloter Baru
-            </h2>
-            <p class="text-sm text-muted-foreground">
-                Isi data kloter baru
-            </p>
-        </div>
-        <UForm :state="form" class="space-y-4 mt-6" @submit="onSubmit">
+    <div class="overflow-auto max-w-2xl">
+        <UForm :state="form" class="space-y-4" @submit="onSubmit">
             <div class="grid grid-cols-2 gap-4">
                 <UFormField label="Nama/Kode Kloter" name="nama" class="col-span-2">
                     <UInput v-model="form.nama" class="w-full" />
